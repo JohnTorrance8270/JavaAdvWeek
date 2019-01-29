@@ -1,0 +1,11 @@
+
+public class ResultsController 
+{
+	public void run()
+	{
+		Results peter = new Results();
+		peter.setPhy(900);
+		peter.setChem(700);
+		peter.showResults();
+	}
+}

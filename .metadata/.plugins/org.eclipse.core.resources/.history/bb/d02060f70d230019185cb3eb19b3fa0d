@@ -1,0 +1,132 @@
+
+public class Results 
+{
+	private int phy, chem, math, failed, minGrade, passingGrade, maxGrade;
+	
+	Results()
+	{
+		passingGrade = 60;
+		maxGrade = 150;
+	}
+	
+	public void interactiveMarking()
+	{
+		do
+		{
+			failed = 0;
+			
+			System.out.print("For physics mark, ");
+			setCheckPhy(getUserNumericInput());
+			
+			System.out.print("For chemistry mark, ");
+			setChem(getUserNumericInput());
+			
+			System.out.print("For math mark, ");
+			setMath(getUserNumericInput());
+			
+			showResults();
+		}
+		while(Input.getUserChoice());
+	}
+	
+	private void markingSchemeSetup()
+	{
+		System.out.print("Please enter");
+	}
+	
+	private static int getUserNumericInput()
+	{
+		int mark = -1;
+		
+		System.out.println("please input a value from " + minGrade + " to " + maxGrade + " range");
+		
+		mark = Input.getUserNumericInput();
+		
+		if((mark >= minGrade) && (mark <= maxGrade))
+		{
+			return mark;
+		}	
+		else
+		{
+			System.out.println("Please output a valid number value");
+			return getUserNumericInput();
+		}	
+	}
+	
+	private void showResults()
+	{
+		switch(failed)
+		{
+			case 0:
+			outputMarksInfo();
+			break;
+			case 1:
+			System.out.println("Retake the exam");
+			break;
+			case 2:
+			System.out.println("Repeat the course");
+			break;
+			case 3:
+			System.out.println("Go home");
+			break;
+		}
+	}
+	
+	private void outputMarksInfo()
+	{
+		int total; 
+		float per;
+		
+		total = phy + chem + math;
+
+		per = total * (0.333f);
+		
+		System.out.println("Total marks: " + total);
+		System.out.println("Percentage: " + per + " %");
+	}
+	
+	public int getPhy() 
+	{
+		return phy;
+	}
+
+	private void setCheckPhy(int phy) 
+	{
+		this.phy = phy;
+				
+		if(this.phy < passingGrade)
+		{
+			failed++;
+		}	
+	}
+
+	public int getChem() 
+	{
+		return chem;
+	}
+
+	public void setChem(int chem) 
+	{
+		this.chem = chem;
+		
+		if(this.chem < passingGrade)
+		{
+			failed++;
+		}	
+	}
+	
+	public int getMath() 
+	{
+		return math;
+	}
+	
+	public void setMath(int math) 
+	{
+		this.math = math;
+		
+		if(this.math < passingGrade)
+		{
+			failed++;
+		}	
+	}
+}

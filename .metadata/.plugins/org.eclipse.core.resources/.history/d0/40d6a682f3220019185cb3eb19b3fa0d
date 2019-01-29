@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Input 
+{
+	static Scanner userInput = new Scanner(System.in);
+	
+	public static int getUserNumericInput()
+	{
+		int min = 0;
+		int max = 150;
+		int mark = -1;
+		
+		System.out.println("please input a value from " + min + " to " + max + " range");
+		
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextInt())
+			{	
+				mark = userInput.nextInt();
+			}
+		}
+		
+		if((mark >= min) && (mark <= max))
+		{
+			return mark;
+		}	
+		else
+		{
+			System.out.println("Please output a valid number value");
+			return getUserNumericInput();
+		}	
+	}
+	
+	public static boolean getUserChoice()
+	{
+		System.out.println("If you wish to go again, enter y, anything else will end the program");
+		String choice = null;
+		
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextLine())
+			{	
+				choice = userInput.next();
+			}
+		}
+		
+		return (choice.equals("y")) ? true : false;	
+	}
+}

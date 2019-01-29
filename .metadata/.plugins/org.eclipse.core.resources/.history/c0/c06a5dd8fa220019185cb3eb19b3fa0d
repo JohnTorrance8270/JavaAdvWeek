@@ -1,0 +1,12 @@
+package StaticPractice;
+
+public class StaticController 
+{
+	static int nonInstanceVar = 0;
+	int instanceVar = 0;
+	
+	public void run()
+	{
+		
+	}
+}

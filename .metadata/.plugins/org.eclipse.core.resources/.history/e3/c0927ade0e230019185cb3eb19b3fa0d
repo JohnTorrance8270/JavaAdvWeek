@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Input 
+{
+	static Scanner userInput = new Scanner(System.in);
+	
+	public static int getUserNumericInput()
+	{
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextInt())
+			{	
+				return userInput.nextInt();
+			}
+		}
+		
+		return -1;
+	}
+	
+	public static int getUserNumericInput(int min, int max)
+	{
+		int userValue = 0;
+		
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextInt())
+			{	
+				userValue = userInput.nextInt();
+			}
+		}
+		
+		if((userValue >= min) && (userValue <= max))
+		{
+			return userValue;
+		}
+		else
+		{
+			System.out.println("Invalid number please enter a number between " + min + "and " + max);
+			return getUserNumericInput(min, max);
+		}
+	}
+	
+	public static boolean getUserChoice()
+	{
+		System.out.println("If you wish to go again, enter y, anything else will end the program");
+		String choice = null;
+		
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextLine())
+			{	
+				choice = userInput.next();
+			}
+		}
+		
+		return (choice.equals("y")) ? true : false;	
+	}
+}

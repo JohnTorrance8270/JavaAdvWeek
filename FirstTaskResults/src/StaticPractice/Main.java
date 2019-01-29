@@ -1,0 +1,11 @@
+package StaticPractice;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		StaticController staticControl = new StaticController();
+		staticControl.run();
+		StaticController.methodStatic();
+	}
+}

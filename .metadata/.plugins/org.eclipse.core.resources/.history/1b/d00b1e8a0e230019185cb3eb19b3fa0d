@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Input 
+{
+	static Scanner userInput = new Scanner(System.in);
+	
+	public static int getUserNumericInput()
+	{
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextInt())
+			{	
+				return userInput.nextInt();
+			}
+		}
+		
+		return -1;
+	}
+	
+	public static int getUserNumericInput(int min, int max)
+	{
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextInt())
+			{	
+				return userInput.nextInt();
+			}
+		}
+		
+		return -1;
+	}
+	
+	public static boolean getUserChoice()
+	{
+		System.out.println("If you wish to go again, enter y, anything else will end the program");
+		String choice = null;
+		
+		if(userInput.hasNext())
+		{
+			if(userInput.hasNextLine())
+			{	
+				choice = userInput.next();
+			}
+		}
+		
+		return (choice.equals("y")) ? true : false;	
+	}
+}
