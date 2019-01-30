@@ -1,0 +1,21 @@
+package interfaceFun;
+
+public class Bank 
+{
+	static int Dollar;
+	
+	static
+	{
+		Dollar = 95;
+	}
+	
+	public void setDollar(int newAmount)
+	{
+		Dollar = newAmount;
+	}
+	
+	public void getDollarAmount()
+	{
+		System.out.println(Dollar);
+	}
+}

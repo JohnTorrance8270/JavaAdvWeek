@@ -1,0 +1,19 @@
+package interfaceFun;
+
+import java.util.Random;
+
+public class SingletonExample 
+{
+	static SingletonExample singletonMath;
+	private Random rand = new Random(); 
+	
+	private SingletonExample()
+	{
+		int n = rand.nextInt(50) + 1;
+	}
+	
+	public static SingletonExample createObject()
+	{
+		return (singletonMath == null) ? singletonMath = new SingletonExample() : singletonMath;
+	}
+}

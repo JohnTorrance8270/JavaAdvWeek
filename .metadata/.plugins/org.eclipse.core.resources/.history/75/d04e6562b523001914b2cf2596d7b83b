@@ -1,0 +1,32 @@
+package DigitToString;
+
+public class DigitConverterArray 
+{
+	
+	
+	public void digitToWords(int digit)
+	{
+		String answer = "";
+		if(digit >= 1000)
+		{
+			answer = convertToEnglishNumber(digit/1000) + " thousand ";
+			digit -= ((digit /1000) * 1000);
+		}
+		if(digit>= 100)
+		{
+			answer += convertToEnglishNumber(digit/100) + " hundred ";
+			digit -= ((digit /100) * 100);
+		}
+		if(digit>= 20)
+		{
+			answer += "and " + convertToEnglishNumberTens(digit/10) + " ";
+			digit -= ((digit /10) * 10);
+		}
+		if(digit >= 0)
+		{
+			answer += convertToEnglishNumber(digit) + " ";
+		}
+		
+		System.out.println(answer);
+	}
+}

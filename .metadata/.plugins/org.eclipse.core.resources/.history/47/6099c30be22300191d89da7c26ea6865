@@ -1,0 +1,40 @@
+package interfaceFun;
+
+public class One extends AbstractTest implements Interface
+{
+	private int refExample;
+	
+	public void setRefExample(int refExample)
+	{
+		this.refExample = refExample;
+	}
+	
+	public void go()
+	{
+		System.out.println("One");
+	}
+
+	@Override
+	public void doTask() 
+	{
+		System.out.println("DoTask");
+	}
+
+	@Override
+	public void undoTask() 
+	{
+		System.out.println("UndoTask");
+	}
+
+	@Override
+	public void testTask() 
+	{
+		System.out.println("TestTask");
+	}
+
+	@Override
+	public void testFoo() 
+	{
+		System.out.println("TestFoo");
+	}
+}

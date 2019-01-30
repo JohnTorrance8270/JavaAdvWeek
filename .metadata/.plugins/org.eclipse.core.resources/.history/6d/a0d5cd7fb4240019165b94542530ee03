@@ -1,0 +1,6 @@
+package FancyCalc;
+
+public class DivideCalc extends CalcWindow
+{
+
+}

@@ -1,0 +1,29 @@
+package interfaceFun;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		One ref = new Two();
+		ref.go();
+		Two to = (Two)ref;
+		to.nextGo();
+		
+		
+		List<Interface> usefulList = new ArrayList<Interface>();
+		usefulList.add(ref);
+		usefulList.add(to);
+		
+		usefulList.get(0).doTask();
+		
+		List<AbstractTest> usefulListTwo = new ArrayList<AbstractTest>();
+		
+		usefulList.add(ref);
+		usefulList.add(to);
+		
+		
+	}
+}

@@ -1,0 +1,39 @@
+package FancyCalc;
+
+import java.awt.Button;
+import java.awt.TextField;
+
+import javax.swing.JFrame;
+
+public abstract class CalcWindow 
+{
+	JFrame frame = null;
+	Button buttonCalc = null;
+	TextField T1, T2, T3;
+	int numOne, numTwo;
+	
+	CalcWindow(String windowName, String buttonText, int numOne, int numTwo)
+	{
+		this.numOne = numOne;
+		this.numTwo = numTwo;
+		
+		frame = new JFrame(windowName);
+		
+		T1 = new TextField(10);
+		T1.setText("" + numOne);
+		frame.add(T1);
+		
+		T2 = new TextField(10);
+		T2.setText("" + numTwo);	
+		frame.add(T2);
+		
+		buttonCalc = new Button(buttonText);
+		buttonCalc.addActionListener(e->response());
+		frame.add(buttonCalc);
+		
+		T3 = new TextField(10);
+		frame.add(T3);
+	}
+	
+	 abstract protected void response();
+}

@@ -1,0 +1,8 @@
+package GUIPractice;
+
+import java.awt.event.ActionListener;
+
+public class EventHandler implements ActionListener 
+{
+
+}

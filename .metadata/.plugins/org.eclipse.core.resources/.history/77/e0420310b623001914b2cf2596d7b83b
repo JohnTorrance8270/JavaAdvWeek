@@ -1,0 +1,17 @@
+package DigitToString;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		DigitConverter digit = new DigitConverter();
+		digit.digitToWords(1240);
+	
+		DigitConverterNumeric digitNum = new DigitConverterNumeric();
+		digitNum.digitToWords(1240);
+		
+		DigitConverterArray digitNum = new DigitConverterArray();
+		digitNum.digitToWords(1240);
+	}
+
+}

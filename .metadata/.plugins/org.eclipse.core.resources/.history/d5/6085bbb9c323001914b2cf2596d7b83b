@@ -1,0 +1,11 @@
+package interfaceFun;
+
+public class Two extends One
+{
+	public void nextGo()
+	{
+		System.out.println("Two");
+	}
+	
+	public void 
+}

@@ -1,0 +1,175 @@
+package StringSPlit;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		//printCheap("Iamgoingtolondon");
+		
+		//System.out.println(findAndCount("Hello", "Hello there Hello"));
+		
+		//System.out.println(findAndCount("llo", "Hello there Hello"));
+		
+		System.out.println(findAndReplace("llo", "Nope",  "Hello there Hello"));
+	}
+	
+	public static void printCheap(String msg)
+	{
+		if(msg.contains(" "))
+		{
+			stringSplitDisplay(msg);
+		}
+		else if(msg.equals("Iamgoingtolondon"))
+		{
+			msg = "I am going to london";
+			
+			stringSplitDisplay(msg);
+		}
+	}
+	
+	private static String[] stringsplit(String msg)
+	{
+		return msg.split(" ");
+	}
+	
+	public static String findAndReplace(String whatToFind, String whatToReplace, String msg)
+	{
+		String newWord = "";
+		String[] words = split(msg);
+		
+		for(String s : words)
+		{
+			if(s.equals(whatToFind))
+			{
+				s = whatToReplace;
+			}
+			else
+			{
+				s = lettersCheckAndReplace(whatToFind, whatToReplace, s);
+			}
+			newWord += s + " ";
+		}
+		
+		return newWord;
+	}
+	
+	public static int findAndCount(String whatToFind, String msg)
+	{
+		int counter = 0;
+		String[] words = split(msg);
+		
+		for(String s : words)
+		{
+			if(s.equals(whatToFind))
+			{
+				counter++;
+			}
+			
+			counter += lettersCheckAndCount(whatToFind, s);
+		}
+		
+		return counter;
+	}
+	
+	private static String lettersCheckAndReplace(String whatToFind, String whatToReplace, String s)
+	{
+		String checkWord = "";
+		String[] letters = s.split("");	
+		
+		if(letters.length >= whatToFind.length())
+		{
+			for(int i = 0; i < letters.length; i++)
+			{
+				checkWord = "";
+				if(i + whatToFind.length() > letters.length)
+				{
+					break;
+				}
+				else
+				{			
+					for(int u = i; u < (whatToFind.length() + i); u++)
+					{
+						checkWord += letters[u];
+					}
+				}
+				
+				if(checkWord.equals(whatToFind))
+				{
+					for(int u = i; u < (whatToFind.length() + i); u++)
+					{
+						int index = 0;
+						String[] newLetters = whatToReplace.split("");
+						letters[u] += newLetters[index];
+						System.out.println();
+						index++;
+					}
+				}
+			}
+		}
+		
+		checkWord = "";
+		for(String s1 : letters)
+		{
+			checkWord += s1;
+		}
+		
+		return checkWord;
+	}
+	
+	private static int lettersCheckAndCount(String whatToFind, String s)
+	{
+		int counter = 0;
+		String[] letters = s.split("");		
+		if(letters.length >= whatToFind.length())
+		{
+			for(int i = 0; i < letters.length; i++)
+			{
+				String checkWord = "";
+				
+				if(i + whatToFind.length() > letters.length)
+				{
+					break;
+				}
+				else
+				{			
+					for(int u = i; u < (whatToFind.length() + i); u++)
+					{
+						checkWord += letters[u];
+					}
+				}
+				
+				if(checkWord.equals(whatToFind))
+				{
+					counter++;
+				}
+			}
+		}
+		
+		return counter;
+	}
+	
+	private static String[] split(String msg)
+	{
+		String[] words;
+		if(msg.contains(" "))
+		{
+			words = stringsplit(msg);
+		}
+		else
+		{
+			words = msg.split("");
+		}
+		
+		return words;
+	}
+	
+	private static void stringSplitDisplay(String msg)
+	{
+		String[] words = msg.split(" ");
+		
+		for(int i = words.length - 1; i >= 0; i--)
+		{
+			System.out.println(words[i]);
+		}
+	}
+}

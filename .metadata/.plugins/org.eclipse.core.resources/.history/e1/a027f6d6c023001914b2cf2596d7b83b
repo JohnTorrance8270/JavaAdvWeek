@@ -1,0 +1,9 @@
+package interfaceFun;
+
+public class One implements Interface
+{
+	public void go()
+	{
+		System.out.println("One");
+	}
+}

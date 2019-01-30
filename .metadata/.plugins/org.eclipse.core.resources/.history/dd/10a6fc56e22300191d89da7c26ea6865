@@ -1,0 +1,16 @@
+package interfaceFun;
+
+public class Bank 
+{
+	static int Dollar;
+	
+	static
+	{
+		Dollar = 95;
+	}
+	
+	public void setDollar(int newAmount)
+	{
+		
+	}
+}

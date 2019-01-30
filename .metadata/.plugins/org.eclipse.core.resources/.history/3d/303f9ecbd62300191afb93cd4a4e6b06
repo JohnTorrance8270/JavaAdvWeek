@@ -1,0 +1,14 @@
+package interfaceFun;
+
+public class SingletonExample 
+{
+	private SingletonExample()
+	{
+		
+	}
+	
+	public static Math createObject()
+	{
+		
+	}
+}

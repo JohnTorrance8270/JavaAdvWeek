@@ -1,0 +1,96 @@
+package GUIPractice;
+
+import java.awt.Button;
+import java.awt.FlowLayout;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		JFrame frame = new JFrame("Calc");
+		
+		TextField T1, T2, T3;
+		T1 = new TextField(10);
+		T1.setText("10");
+		T2 = new TextField(10);
+		T2.setText("5");
+		
+		T3 = new TextField(10);
+		
+		int numOne = Integer.parseInt(T1.getText());
+		int numTwo = Integer.parseInt(T2.getText());
+		
+		Button buttonOne = new Button("+");
+		buttonOne.addActionListener( new ActionListener() 
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				T3.setText("" + (numOne + numTwo));
+			}
+		});
+		
+		Button buttonTwo = new Button("-");
+		buttonTwo.addActionListener( new ActionListener() 
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				T3.setText("" + (numOne - numTwo));
+			}
+		});
+		
+		Button buttonThree= new Button("*");
+		buttonThree.addActionListener( new ActionListener() 
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				T3.setText("" + (numOne * numTwo));
+			}
+		});
+		
+		Button buttonFour = new Button("/");
+		buttonFour.addActionListener( new ActionListener() 
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				T3.setText("" + (numOne / numTwo));
+			}
+		});
+		
+		FlowLayout fl = new FlowLayout();
+		frame.setLayout(fl);
+		
+		frame.add(T1);
+		frame.add(T2);
+		
+		frame.add(buttonOne);
+		frame.add(buttonTwo);
+		frame.add(buttonThree);
+		frame.add(buttonFour);
+		
+		frame.add(T3);
+		
+		//EventHandler e = new EventHandler(T3);
+		//buttonOne.addActionListener(e);
+		
+		frame.setSize(500, 500);
+		frame.setVisible(true);
+	}
+	
+	public static void test()
+	{
+		System.out.println("test");
+	}
+}

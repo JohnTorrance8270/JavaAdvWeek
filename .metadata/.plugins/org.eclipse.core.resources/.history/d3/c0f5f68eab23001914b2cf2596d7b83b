@@ -1,0 +1,19 @@
+package DigitToString;
+
+import java.util.Scanner;
+
+public class UserInput 
+{
+	public static Scanner userinput = new Scanner(System.in);
+	
+	public static int getUserInt()
+	{
+		if(userinput.hasNext())
+		{
+			if(userinput.hasNextInt())
+			{
+				return userinput.nextInt();
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+package interfaceFun;
+
+public class SingletonExample 
+{
+	static Math singletonMath;
+	
+	private SingletonExample()
+	{
+		
+	}
+	
+	public static Math createObject()
+	{
+		return (singletonMath == null) ? x = new Math();
+	}
+}

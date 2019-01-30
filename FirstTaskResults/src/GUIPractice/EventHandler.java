@@ -1,0 +1,30 @@
+package GUIPractice;
+
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class EventHandler implements ActionListener 
+{
+	TextField t1;
+	int numOne, numTwo;
+	
+	public EventHandler(TextField t1, int numOne, int numTwo)
+	{
+		this.t1 = t1;
+		this.numOne = numOne;
+		this.numTwo = numTwo;
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent event) 
+	{
+		t1.setText("" + (numOne + numTwo));
+	}
+	/*
+	public createActionEvent()
+	{
+		ActionEvent e = new ActionEvent(tf1.cutButton, 1001, "cut");
+	}
+	*/
+}

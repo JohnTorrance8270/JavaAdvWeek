@@ -1,0 +1,27 @@
+package interfaceFun;
+
+public class One implements Interface
+{
+	public void go()
+	{
+		System.out.println("One");
+	}
+
+	@Override
+	public void doTask() 
+	{
+		System.out.println("DoTask");
+	}
+
+	@Override
+	public void unDoTask() 
+	{
+		System.out.println("UndoTask");
+	}
+
+	@Override
+	public void testTask() 
+	{
+		System.out.println("One");
+	}
+}

@@ -1,0 +1,11 @@
+package interfaceFun;
+
+public class Bank 
+{
+	static int Dollar;
+	
+	static
+	{
+		Dollar = 95;
+	}
+}

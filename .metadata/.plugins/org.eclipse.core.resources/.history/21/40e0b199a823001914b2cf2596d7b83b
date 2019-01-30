@@ -1,0 +1,11 @@
+package DigitToString;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		DigitConverter digit = new DigitConverter();
+		digit.digitToWords(10);
+	}
+
+}

@@ -1,0 +1,51 @@
+package GUIPractice;
+
+import java.awt.Button;
+import java.awt.FlowLayout;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		JFrame frame = new JFrame("Calc");
+		
+		TextField T1, T2, T3;
+		
+		Button buttonOne = new Button("+");
+		Button buttonTwo = new Button("-");
+		Button buttonThree= new Button("*");
+		Button buttonFour = new Button("/");
+		
+		T1 = new TextField(10);
+		T1.setText("10");
+		T2 = new TextField(10);
+		T2.setText("5");
+		
+		T3 = new TextField(10);
+		
+		FlowLayout fl = new FlowLayout();
+		frame.setLayout(fl);
+		
+		frame.add(T1);
+		frame.add(lib);
+		frame.add(T2);
+		frame.add(buttonOne);
+		frame.add(T3);
+		
+		EventHandler e = new EventHandler(T3, Integer.parseInt(T1.getText()), Integer.parseInt(T2.getText()));
+		buttonOne.addActionListener(e);
+		
+		frame.setSize(500, 500);
+		frame.setVisible(true);
+	}
+	
+	public static void test()
+	{
+		System.out.println("test");
+	}
+}

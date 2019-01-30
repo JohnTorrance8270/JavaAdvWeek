@@ -1,0 +1,10 @@
+package GUIPractice;
+
+public class AddCalc extends CalcWindow
+{
+	protected response()
+	{
+		
+	}
+
+}

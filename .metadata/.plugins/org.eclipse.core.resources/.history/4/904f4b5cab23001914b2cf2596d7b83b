@@ -1,0 +1,6 @@
+package DigitToString;
+
+public class UserInput 
+{
+	public static Scanner userinput = new Scanner(System.in);
+}

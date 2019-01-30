@@ -1,0 +1,9 @@
+package interfaceFun;
+
+public class One 
+{
+	public go()
+	{
+		
+	}
+}

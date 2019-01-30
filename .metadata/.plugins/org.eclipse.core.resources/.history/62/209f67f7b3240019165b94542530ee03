@@ -1,0 +1,6 @@
+package GUIPractice;
+
+public class AddCalc extends CalcWindow
+{
+
+}

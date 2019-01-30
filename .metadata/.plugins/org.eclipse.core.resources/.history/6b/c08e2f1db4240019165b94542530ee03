@@ -1,0 +1,11 @@
+package FancyCalc;
+
+public class AddCalc extends CalcWindow
+{
+
+	AddCalc(String windowName, String buttonText, int numOne, int numTwo) {
+		super(windowName, buttonText, numOne, numTwo);
+		// TODO Auto-generated constructor stub
+	}
+
+}
