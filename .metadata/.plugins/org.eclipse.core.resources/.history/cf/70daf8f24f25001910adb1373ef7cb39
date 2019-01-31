@@ -1,0 +1,27 @@
+package ExceptionHandling;
+
+import java.util.Scanner;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		int c = 4;
+		
+		try
+		{
+			//c = 4/0;
+			Scanner user = new Scanner(System.in);
+			int b = user.nextInt();
+			System.out.println("working Code");
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println("you broke it");
+		}
+		catch(Exception e)
+		{
+			System.out.println("you really broke it");
+		}
+	}
+}

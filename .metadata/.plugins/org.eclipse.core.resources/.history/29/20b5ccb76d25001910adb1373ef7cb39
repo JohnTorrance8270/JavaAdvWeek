@@ -1,0 +1,14 @@
+package ExceptionHandling;
+
+public class CoolExceptionExample 
+{
+	public void tax(int salary, int absence)
+	{
+		float tax = 0;
+		
+		if()
+		{
+			
+		}
+	}
+}

@@ -1,0 +1,112 @@
+package FancyCalc;
+
+import java.awt.Button;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JRadioButton;
+
+public class MenuFrame 
+{
+	JFrame frame = null;
+	
+	JRadioButton  buttonOne = null;
+	JRadioButton buttonTwo = null;
+	JRadioButton buttonThree = null;
+	JRadioButton buttonFour = null;
+	
+	MenuFrame()
+	{
+		BufferedImage checked = null;
+		try 
+		{
+			checked = ImageIO.read(getClass().getClassLoader().getResourceAsStream("FancyCalc/img.png"));
+			System.out.println(checked);
+		} 
+		catch (IOException e1) 
+		{
+			e1.printStackTrace();
+		}
+		
+        Image unchecked = null;
+		try 
+		{
+			unchecked = ImageIO.read(getClass().getResource("FancyCalc/uncheckedButton.png")).getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+		} 
+		catch (IOException e1) 
+		{
+			e1.printStackTrace();
+		}
+		
+		frame = new JFrame();
+		
+		GridLayout g = new GridLayout(4,1);
+		frame.setLayout(g);
+		ButtonGroup bG = new ButtonGroup();
+		
+		buttonOne = new JRadioButton ("+");
+		bG.add(buttonOne);	
+		buttonOne.addActionListener(e->addChosen());
+		buttonOne.setSelectedIcon(new ImageIcon(checked));
+		buttonOne.setIcon(new ImageIcon(unchecked));
+		buttonOne.setHorizontalTextPosition(JRadioButton.CENTER);
+		buttonOne.setVerticalTextPosition(JRadioButton.BOTTOM);
+		frame.add(buttonOne);
+		
+		buttonTwo = new JRadioButton("-");
+		bG.add(buttonTwo);
+		buttonTwo.addActionListener(e->subChosen());
+		frame.add(buttonTwo);
+		
+		buttonThree = new JRadioButton("*");
+		bG.add(buttonThree);
+		buttonThree.addActionListener(e->multiChosen());
+		frame.add(buttonThree);
+		
+		buttonFour = new JRadioButton("/");
+		bG.add(buttonFour);
+		buttonFour.addActionListener(e->divideChosen());
+		frame.add(buttonFour);
+		
+		frame.setSize(600, 600);
+		frame.setVisible(true);
+	}
+	
+	private void addChosen()
+	{
+		AddCalc addCalc = new AddCalc("Addition", "+", 7, 8);
+		
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+		frame = addCalc.getFrame();
+	}
+	
+	private void subChosen()
+	{
+		SubCalc subCalc = new SubCalc("Subtraction", "-", 7, 10);
+		
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+		frame = subCalc.getFrame();
+	}
+	
+	private void multiChosen()
+	{
+		MultiCalc multiCalc = new MultiCalc("Multiplication", "*", 3, 6);
+		
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+		frame = multiCalc.getFrame();
+	}
+	
+	private void divideChosen()
+	{
+		DivideCalc divideCalc = new DivideCalc("Division", "/", 8, 8);
+		
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+		frame = divideCalc.getFrame();
+	}
+}

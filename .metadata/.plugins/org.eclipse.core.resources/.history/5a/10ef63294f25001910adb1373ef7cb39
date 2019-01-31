@@ -1,0 +1,22 @@
+package ExceptionHandling;
+
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		int c = 0;
+		
+		try
+		{
+			c = 4/0;
+		}
+		catch(ArithmeticException e)
+		{
+			
+		}
+		catch(Exception e)
+		{
+			
+		}
+	}
+}
